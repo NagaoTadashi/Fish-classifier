@@ -1,0 +1,10 @@
+version: "3"
+services:
+  app:
+    build: .
+    ports:
+      - "5001:5000"
+    container_name: app
+    volumes:
+      - .:/usr/src
+    command: flask --app /usr/src/app/app run --host=0.0.0.0 --debug
