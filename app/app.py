@@ -30,5 +30,5 @@ def index():
                 return render_template("display_img.html", file_path=file_path)
     else:
         return render_template("index.html")
-        
+
 
