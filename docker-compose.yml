@@ -7,4 +7,4 @@ services:
     container_name: app
     volumes:
       - .:/usr/src
-    command: flask --app /usr/src/app/app run --host=0.0.0.0 --debug
+    command: flask --app app/app run --host=0.0.0.0 --debug
