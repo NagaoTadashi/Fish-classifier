@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for, flash
 from werkzeug.utils import secure_filename
+from models import callAPI
 
 UPLOAD_FOLDER = "./app/static/images/upload"
 ALLOWED_EXTENSIONS = set(["png", "jpg", "jpeg"])
@@ -31,4 +32,12 @@ def index():
     else:
         return render_template("index.html")
 
-
+@app.route("/classify", methods=["GET", "POST"])
+def classify_img():
+    if request.method == "POST":
+        file_path = request.form["img"]
+        data = callAPI(file_path)
+        
+        return render_template("classify_img.html", fish_data=data, file_path=file_path)
+    else:
+        return render_template("index.html")
