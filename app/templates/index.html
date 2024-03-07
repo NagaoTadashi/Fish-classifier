@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block body %}
 {% with messages = get_flashed_messages() %}
-  {% if messages %}
+{% if messages %}
     <ul class=flashes>
     {% for message in messages %}
-      <li>{{ message }}</li>
+    <li>{{ message }}</li>
     {% endfor %}
     </ul>
-  {% endif %}
+{% endif %}
 {% endwith %}
 <div class="row">
     <div class="col s8 offset-s2">
