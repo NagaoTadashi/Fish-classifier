@@ -1,0 +1,3 @@
+Flask
+sqlalchemy
+azure-cognitiveservices-vision-customvision
