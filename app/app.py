@@ -35,7 +35,7 @@ def index():
 @app.route("/classify", methods=["GET", "POST"])
 def classify_img():
     if request.method == "POST":
-        file_path = request.form["img"]
+        file_path = request.form["image"]
         data = callAPI(file_path)
         
         return render_template("classify_img.html", fish_data=data, file_path=file_path)
